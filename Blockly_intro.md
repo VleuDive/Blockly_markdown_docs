@@ -53,8 +53,6 @@ Blockly 라이브러리 다운로드 및 시작하기(Web)
 Blockly는 기본적으로 오픈소스 라이브러리입니다. [Blockly 공식 Github 레포지터리](https://github.com/google/blockly)
 에서 소스를 clone 해 사용할 수 있습니다. Blockly는 서버의 개입 없이 client-side 에서 작동하며, 대부분의 경우 별다른 3rd-party dependency를 필요로 하지 않기 때문에, 
 이렇게 소스코드를 다운받는 것으로 준비는 끝납니다.
-
 ![screenshot](img/fixed_demo.png)
-
 Blockly 레포지터리를 제대로 clone해 오셨다면 해당 폴더의 **demos/fixed/index.html**을 실행하여 작동 테스트를 해 볼 수 있습니다.
 이렇게 환경 구축을 끝내고 나면, 이제 Blockly 라이브러리를 사용해 어플리케이션을 만들 준비가 된 것입니다.
