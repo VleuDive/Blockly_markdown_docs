@@ -14,7 +14,7 @@ Blockly block은 크게 두 가지 방법으로 정의 가능합니다. 두 방�
 블록 속성을 정의하는 한편, 다른 방법은 **JSON Array** 형식으로 블록 속성을 정의합니다.
 간단한 예를 들어 보겠습니다.
 
-![string_length](img/string_length_block.png)
+![string_length](./img/string_length_block.png)
 
 이 블록은 String을 받았을 때 그 길이를 리턴해 주는 기능을 합니다.
 Javascript 스타일과 JSON Array 스타일로 각각 이 블록을 정의해 보면 다음과 같습니다.
@@ -88,7 +88,7 @@ Blockly Developer Tools
 원래 블록 정의는 코딩만으로 충분히 가능하기는 하지만, 코딩만으로는 지금 만들고 있는 블록이 어떤 모양이 될지,
 결합부는 제대로 만들어졌는지, 색깔은 어떤지 가늠하기 어렵습니다. 그래서 만들어진 것이 [Blockly Developer tools]("https://blockly-demo.appspot.com/static/demos/blockfactory/index.html") 입니다.
 
-![dev_tools](img/developer_tools.png)
+![dev_tools](./img/developer_tools.png)
 
 이 페이지에서는 이미 정의된 component를 이용하여 시각적인 방법으로 블록 정의를 할 수 있습니다.
 만들어지는 블록의 모습을 Preview 창에서 실시간으로 확인할 수 있고, Block Definition이나 Generator Stub 창에서는 Block definition과
