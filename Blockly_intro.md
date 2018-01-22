@@ -1,6 +1,6 @@
 Blockly란?
 ===========================
-Google이 만든 Blockly 라이브러리는 웹, ios, Android에서 구동하는 
+Google이 만든 [Blockly](https://developers.google.com/blockly/) 라이브러리는 웹, ios, Android에서 구동하는 
 블록 기반 프로그래밍 앱을 만들기 위해 사용됩니다.
 
 주의하실 점은 **Blockly 라이브러리**는 개발자를 위한 도구이며,
