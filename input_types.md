@@ -36,12 +36,12 @@ Input의 종류
 상술했듯이, Blockly 블록의 Input에는 **Dummy Input, Value Input, Statement Input**의 세 가지가 있습니다.
 모두 성격이나 역할이 다르기 때문에 블록의 목적이나 특성에 따라 다른 타입의 Input이 사용되고, 한 블록에 여러 가지 종류의 Input이 함께 쓰이는 경우도 빈번합니다.
 
-###Dummy Input
+### Dummy Input
 이 타입의 input은 블록과 직접적으로 연결되는 것이 아니며 특정한 피연산자나 값을 나타내는 input도 아닙니다. 값을 직접 나타내는 것은 아니지만 블록의 이름을 나타내는 label을 담거나, 선택 가능한 목록을 나타내는 dropdown menu field를 추가하거나, external input을 받을 때 강제개행과 비슷한 용도로 쓰이는 등 다양한 용도로 쓰이지요.
 한 마디로 말하면 보조적인 역할을 하는 요소라 할 수 있지만, 한편으로는 블록의 모양이나 성질을 구성하는 데 있어서 중요한 역할을 하는 input입니다.
 실제로 모양을 가지고 보여지는 블록이 아니기 때문에 특별한 형태는 없습니다.
 
-###Value Input
+### Value Input
 Value input은 value input을 가진다고 정의된 블록과 결합할 수 있습니다. 실제 피연산자나 값을 나타내며, 주로 함수의 파라미터 등으로 들어갑니다.
 또한 이 타입의 input은 output을 가지는 짧은 블록의 형태로 정의되는 경우가 많습니다. 보통 이런 모양입니다.
 
@@ -51,7 +51,7 @@ Value Input의 사용 시 주의하실 점은, **Block 정의 시 정해 준 자
 하지만 실제로 editor에서 타입이 맞지 않는 input과 block을 연결하려고 하면 제대로 붙지 않고 한쪽 블록이 튕겨져 나가 버리므로, 실제 사용 시에는 타입이 맞는 연결인지 여부를 바로 알 수 있습니다.
 
 
-###Statement Input
+### Statement Input
 일부 블록의 경우, value 대신 statement를 input으로 받기도 합니다. 이때 statement는 '구문'에 가깝게 번역되며, 해당 블록의 범위 내에서 다시 실행되어야 하는 서브 동작을 나타냅니다. 통상적인 고급 언어에 대입해 보면, if문이나 for 문, while 문, 함수 정의 시 중괄호 안쪽이나 콤마(:) 아래쪽에 들여쓰기로 들어가게 되는 하부 동작과 같다고 할 수 있습니다.
 블록의 형태를 중심으로 보았을 때, statement input을 나타내는 블록들은 주로 output이 아닌 conncetion을 가지며, Top+Bottom connection을 가지도록 정의되는 경우가 많습니다. 또한 statement input을 가지는 블록은 아래 왼쪽 그림과 같이 생겼으며, statement input과 결합할 경우 아래 오른쪽 그림과 같은 모양이 됩니다.
 
@@ -66,7 +66,7 @@ Blockly에는 field라는 개념도 존재합니다. 이 field들은 블록에 �
 보통 field를 사용할 때는 **dummy input과 함께 사용하는 편**입니다. (Blockly Developer Tools에서 확인해 보면 dummy input에 field 블록이 물려 있는 형태를 하고 있습니다.) 이 특성은 JSON array로 블록을 정의할 때보다 Javascript 스타일로 정의할 때 더 확연히 드러나는 편인데, 자세한 점은 다른 문서에서 서술합니다. 
 Blockly에서 사용하는 field에는 다음과 같은 것들이 있습니다.
 
-###label
+### label
 
 말 그대로 라벨로 사용하는 field입니다. Label은 굉장히 자주 쓰이는 field입니다. 블록의 이름이나, 블록 자체에 표시되는 간단한 설명문 등은 모두 이 label을 사용하여 만들어집니다. 이처럼 활용성이 좋기 때문에, label field는  
 아예 자신만의 notation이 따로 있습니다. 코드를 보면 더 확실히 이해가 가실 것입니다. 블록 정의는 JSON array 스타일을 기준으로 하겠습니다.
@@ -118,7 +118,7 @@ label의 이름과 내용은 따로 정의하지 않고, message0 부분에 한 
 또한, 위의 코드에서 "a label" 라벨을 정의한 방식으로 명시적으로 label을 정의할 경우, "type","text" 외에도 "style"이라는 키를 추가하여 라벨에 CSS 기반 스타일을 부여할 수도 있습니다.
 
 
-###Image
+### Image
 
 ![image_ex](img/image_ex.png)
 
@@ -129,7 +129,7 @@ Image의 경우도 label과 마찬가지로 자신만의 indicator를 따로 가
 Image field는 독특하게도  "alt"라는 독특한 요소를 가지고 있는데, 이것은 오류로 인해 이미지가 표시되지 않거나, 접근성을 고려해야 하는 상황에서 이미지 대신에 표시될 수 있는 설명문을 말합니다. 어떤 이유에서든 이미지를 표시할 수 없는 상황이 되면, 자동으로 "alt" 에 지정된 string이 대신 출력됩니다.
 
 
-###Dropdown
+### Dropdown
 여러 항목 중 하나를 선택할 때 사용되는 drop-down field입니다. Input의 값보다는, block이 나타내는 연산에 설정해 줄 옵션 등을 선택하는 데 주로 사용됩니다. Dropdown field를 정의하는 코드는 다음과 같습니다.
 역시 함수는 제외하고 블록 설정을 나타내는 JSON array만 표시하겠습니다.
 
@@ -166,7 +166,7 @@ Dropdown 옵션으로 'first','second'를 가지고 있는 것을 볼 수 있습
 **사용자는 앞에 오는 이름(실제 표기되는 이름)을 보고 선택을 하지만, 코드 상에서 조건 등을 설정할 때는 코드 상의 이름(두 번째 이름)으로 각 option을 식별합니다.** 
 이처럼 사용자가 실제 선택하는 이름과 코드 상에서 사용되는 indicator가 다르므로, 헷갈리지 않도록 주의해야 합니다. 또는 아예 양쪽 이름을 똑같이 설정해 주는 것도 방법입니다.
 
-###그 외의 field
+### 그 외의 field
 * Checkbox
 
 ![check_ex](img/checkbox_ex.png)
