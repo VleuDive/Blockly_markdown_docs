@@ -33,7 +33,7 @@ Javascript 스타일과 JSON Array 스타일로 각각 이 블록을 정의해 �
  
  (자세한 코드 해석은 다른 문서에서 다루겠습니다.)
  
- * JSON Array 스타일
+* JSON Array 스타일
         
         Blockly.defineBlocksWithJsonArray(
         [
@@ -41,12 +41,12 @@ Javascript 스타일과 JSON Array 스타일로 각각 이 블록을 정의해 �
                 "type":"string_length",
                 "message0":"length of %1",
                 "args0":[
-                    {
-                        "type":"input_value",
-                        "name":"Value",
-                        "check":"String"
-                    }
-                ],
+                       {
+                            "type":"input_value",
+                            "name":"Value",
+                            "check":"String"
+                        }
+                    ],
                 "output":null,
                 "colour":160,
                 "tooltip":"tooltip for this block",
@@ -56,8 +56,8 @@ Javascript 스타일과 JSON Array 스타일로 각각 이 블록을 정의해 �
   
  (역시 자세한 코드 해석은 다른 문서에서 다루겠습니다.)
  
- 하나 주의하실 점은,
- JSON array 형태로 블록 정의를 할 때, **파일 형태를 .json으로 하면 안 된다**는 것입니다.
+하나 주의하실 점은,
+JSON array 형태로 블록 정의를 할 때, **파일 형태를 .json으로 하면 안 된다**는 것입니다.
 JSON array 형태로 정의할 때도 정의가 들어 있는 파일의 확장자는 **.js** 이며, Javascript 파일 내에서
 **Blockly.defineBlocksWithJsonArray()** 함수의 파라미터로 블록의 정의가 담긴 JSON array를 넘겨 주는 형태입니다.
 
