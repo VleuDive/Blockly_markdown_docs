@@ -112,3 +112,39 @@ Short_math 블록은 두 개의 value input을 가집니다. 그 중 첫 번째 
     this.setHelpUrl("");
 ```
 
+코드의 세 번째 줄부터는 블록 자체에 대한 세부 속성을 정의합니다.
+
+**setInputsInline()** 은 Input을 Inline 형태로 정렬할 것인지 아닌지를 결정하는 함수입니다. 파리미터로는 true, false의 boolean 값이 들어가고, true로 설정되었을 경우 inline 정렬로 설정됩니다.
+Inline정렬과, inline 정렬이 아닌 블록(automatic 정렬이라고도 합니다.)은 다음과 같이 input 결합부의 모양에서 차이가 납니다.
+
+![inline_ex](img/inline_ex.png)
+
+![auto_ex](img/automatic_ex.png)
+
+Automatic 정렬의 경우 input이 많아지면 블록이 위아래로 길어지는 형태가 되기 때문에, output이 있는 블록보다는 위 또는 아래 connection이 있는 블록에 적용하는 것이 나중에 다른 블록과 결합했을 때 더 보기 좋아집니다.
+
+**setPreviousStatement()** 는 previous statement(top connection)의 유무를 정해 주는 함수입니다. 생략 시 previous statement가 없는 블록이 되고, 파라미터를 true로 하여 이 함수를 호출해 주면 블록에 previous statement가 생겨 다음과 같은 형태가 됩니다.
+
+![prev_ex](img/top_block.png)
+
+**setNextStatement()** 는 next statement(bottom connection)의 유무를 정해 주는 함수입니다. setPreviousStatement()처럼 생략할 시 next statement가 없는 블록이 됩니다. 파라미터를 true로 한 채 이 함수를 호출하면 블록은 다음과 같은 모양이 되지요.
+
+![next_ex](img/bottom.png)
+
+이번 예에서는 setPreviousStatement()와 setNextStatement()를 둘 다 호출했으므로, previous statement와 next statement가 모두 존재하는 블록이 만들어집니다. 이런 형태가 되지요.
+
+![both_ex](img/top_bottom_block.png)
+
+**setColour** 는 블록의 색깔을 설정해 주는 함수입니다. Blockly는 블록의 색을 정의할 때 HSV(Hue-Saturation-Value) 모델들 이용합니다. 그 중에서도 이 함수로 직접 정해 줄 수 있는 값은 Hue이죠. 이렇게 하면 색상의 다양성을 보장하면서도, 특정 블록이 너무 튀어 보이지 않고 모든 블록의 색이 잘 어우러지도록 할 수 있습니다. 만약 Hue 외에 Saturation과 Value도 바꾸어 전체적인 색감을 조정하고 싶다면, 다른 설정 파일에 정의되어 있는 해당 값을 직접 바꾸어 줄 수도 있습니다. 가장 쉽게 바꿀 수 있는 Hue는 각도로 표현되며, 0~360도 사이의 값으로 지정해 주어야 합니다.
+각도 값에 따른 색상의 변화는 아래 스펙트럼에서 확인해 볼 수 있습니다.
+
+![spectrum](img/hue_spectrum.png)
+
+**setTooltip** 함수는 블록에 tooltip을 부여해 줍니다. Tooltip은 블록에 마우스 커서를 올려 놓고 일정 시간이 지나면 나타나는 작은 글 상자이며, 이 안에 들어가는 문구를 사용자가 마음대로 정해 줄 수 있습니다. 보통 블록에 대한 간략한 설명을 담아 놓으며, 이 함수의 파라메터로 들어가는 String 값이 해당 블록의 tooltip 내용이 됩니다.
+
+마지막으로, **setHelpUrl()** 함수가 있습니다. 이 함수의 파라미터로는 string이 들어가며, 이 string은 특정 URL을 나타냅니다. Tooltip만으로는 블록에 대해 충분히 설명할 수 없을 때, 더 상세한 설명을 제공해 주는 페이지로 직접 이동할 수 있게 하기 위해 이 함수를 이용합니다. Help Url이 설정된 블록 위에서 오른쪽 마우스를 클릭하면 다음과 같은 context menu가 나타나고, Help를 클릭 시 이 함수를 통해 지정해 놓은 웹 페이지로 바로 이동합니다.
+
+![help_context_menu](img/help_context.png)
+
+이렇게 해서 하나의 완전한 블록이 정의됩니다. 아직 실제 코드가 매핑되어 있지는 않지만, 블록의 모양만큼은 완성되어 있지요.
+이런 블록을 정의하는 방법에는 한 가지가 더 있는데, 그 방법에 대해서는 다른 문서에서 다루겠습니다.
