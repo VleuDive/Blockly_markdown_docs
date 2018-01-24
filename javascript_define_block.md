@@ -7,7 +7,7 @@ Javascript로 블록 정의하기
 ----------------------------------
 이번과 다음 문서에서 정의할 블록의 이름은 Short_math이며, 다음과 같은 모양을 하고 있습니다.
 
-![short_math_ex](img/short_math_ex.png)
+![short_math](img/short_math_ex.png)
 
 이 블록은 Top+Bottom connection을 가지고 있으며, 2개의 Value Input을 가집니다. 또한 중간에 dropdown field가 있어 연산의 종류를 선택할 수 있습니다.
 이 블록은 '짧은 표현식'을 구현하고 있습니다. C++ 이나 Java, Python 등의 문법으로 보자면 **a+=b** 식의 연산을 나타내는 블록입니다. 단, 중간에 dropdown field를 두어 연산의 종류를 선택할 수 있게 했기 때문에 결과적으로는 한 블록에서 a+=b, a-=b, a/=b, a*=b 의 연산이 모두 가능합니다.
